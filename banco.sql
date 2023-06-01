@@ -1,0 +1,9 @@
+CREATE TABLE "usuario" (
+	"Nome_ID" INTEGER NOT NULL,
+	"Nome" CHAR(50) NULL,
+	"Idade" TINYINT NULL,
+	"Email" VARCHAR(50) NULL,
+	"Senha" TINYINT NULL,
+	PRIMARY KEY ("Nome_ID")
+)
+;
