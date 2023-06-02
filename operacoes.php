@@ -18,7 +18,7 @@ function alterar_usuario($usuario) {
             "Email = :Email, ".
             "Senha = :Senha, " .
             "WHERE Nome_ID = :Nome_ID";
-    $pdo->prepare($sql)->execute($usuario);
+    $pdo->prepare($sql)->execute();
 }
 
 function excluir_usuario($Nome_ID) {
@@ -34,6 +34,7 @@ function listar_todos_usuario() {
     $consulta = $pdo->query($sql);
     while ($linha = $consulta->fetch()) {
         $resultados[] = $linha;
+        
     }
     return $resultados;
 }
@@ -46,4 +47,6 @@ function buscar_usuario($Nome_ID) {
     $consulta->execute(["Nome_ID" => $Nome_ID]);
     return $consulta->fetch();
 }
+
+
 

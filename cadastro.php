@@ -42,6 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     if ($alterar) {
         $usuario = [
+            "Nome_ID" => $_POST["Nome_ID"],
             "Nome" => $_POST["Nome"],
             "Idade" => $_POST["Idade"],
             "Email" => $_POST["Email"],
@@ -75,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Cadastro de folhas</title>
+        <title>Cadastro de Usuario</title>
         <script>
             function confirmar() {
                 if (!confirm("Tem certeza que deseja salvar os dados?")) return;
@@ -86,6 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                 if (!confirm("Tem certeza que deseja excluir o usuario?")) return;
                 document.getElementById("excluir-usuario").submit();
             }
+        
         </script>
     </head>
     <body>
@@ -127,7 +129,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     method="POST"
                     style="display: none"
                     id="excluir-usuario">
-                <input type="hidden" name="Nome_ID" value="<?= $excluir_usuario["Nome_ID"] ?>" >
+                <input type="hidden" name="Nome_ID" value="<?= $usuario["Nome_ID"] ?>" >
             </form>
             <button type="button" onclick="excluir()">Excluir</button>
         <?php } ?>
